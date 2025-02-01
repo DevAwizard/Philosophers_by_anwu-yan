@@ -4,8 +4,6 @@ The Dining Philosophers project is part of the **42 curriculum**, designed to te
 
 It is based on the classic Dining Philosophers Problem, described by **Edsger Dijkstra** in 1965, which models process synchronization in operating systems.
 
-![Dining Philosophers](https://github.com/user-attachments/assets/4c4e725b-24d4-4ca6-9d43-d924f7e8fdad)
-
 
 📌 The Dining Philosophers Problem
 
@@ -22,7 +20,11 @@ Each philosopher alternates between three states:
 	2.	Eating 🍝
 	3.	Sleeping 😴
 
+
 The goal is to prevent deadlocks and race conditions while philosophers try to eat without conflicts.
+
+![Dining Philosophers](https://github.com/user-attachments/assets/4c4e725b-24d4-4ca6-9d43-d924f7e8fdad)
+
 
 
 ---
