@@ -9,6 +9,8 @@
 </div>
 
 
+
+
 ### Table of Contents
 
 1. [Introduction](#introduction)
@@ -20,15 +22,16 @@
 4. [Permitted Functions](#permitted-functions)
 
 
+### Introduction
 
 The Dining Philosophers project is part of the **42 curriculum**, designed to teach threads, synchronization, and concurrency issues in C using pthread.
 
 It is based on the classic Dining Philosophers Problem, described by **Edsger Dijkstra** in 1965, which models process synchronization in operating systems.
 
 
-#### 📌 The Dining Philosophers Problem
+### 📌 The Dining Philosophers Problem
 
-🔹 Context
+### 🔹 Context
 
 Five philosophers are seated at a circular table, where each has:
 - A plate of spaghetti 🍝
@@ -47,9 +50,9 @@ Each philosopher alternates between three states:
 
 The goal is to prevent deadlocks and race conditions while philosophers try to eat without conflicts.
 
-#### 📌 Project Rules in 42
+### 📌 Project Rules in 42
 
-🔹 Arguments
+### 🔹 Arguments
 
 The program receives the following parameters:
 
@@ -70,7 +73,7 @@ Explanation of parameters:
 - **time_to_sleep**: Time (ms) a philosopher sleeps after eating.
 - **(Optional) number_of_times_each_philosopher_must_eat**: If provided, the program ends when all philosophers have eaten this many times.
 
-✅ Permitted functions
+### ✅ Permitted functions
 
 | **Function**                           | **Header File**       
 |----------------------------------------|------------------------------
