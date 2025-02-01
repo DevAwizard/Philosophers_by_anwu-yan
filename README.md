@@ -92,5 +92,32 @@ Explanation of parameters:
 ### 🌲 Project Structure
 <a name="project-structure"></a>
 
+```sh
+├── Makefile
+├── includes
+│   ├── define.h
+│   └── philo.h
+└── srcs
+    ├── error
+    │   └── error.c
+    ├── main.c
+    ├── parsing
+    │   └── check_input.c
+    ├── program
+    │   ├── 1_init_philo.c
+    │   ├── 2_start_simulation.c
+    │   ├── 3_philo_routine.c
+    │   ├── 4_philo_actions.c
+    │   └── 5_monitor.c
+    └── utils
+        ├── check_input_utils.c
+        ├── free_program.c
+        ├── print_utils.c
+        └── time_utils.c
+```
+
+
+
+
 
 ---
