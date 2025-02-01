@@ -12,25 +12,28 @@
 ### Table of Contents
 
 1. [Introduction](#introduction)
+   
 2. [📌 The Dining Philosophers Problem](#the-dining-philosophers-problem)
    - [🔹 Context](#context)
    - [◾️ Philosopher States](#philosopher-states)
+     
 3. [📌 Project Rules in 42](#project-rules-in-42)
    - [🔹 Arguments](#arguments)
+     
 4. [✅ Permitted Functions](#permitted-functions)
 
 
 ### Introduction
-
+<a name="introduction"></a>
 The Dining Philosophers project is part of the **42 curriculum**, designed to teach threads, synchronization, and concurrency issues in C using pthread.
 
 It is based on the classic Dining Philosophers Problem, described by **Edsger Dijkstra** in 1965, which models process synchronization in operating systems.
 
 
 ### 📌 The Dining Philosophers Problem
-
+<a name="the-dining-philosophers-problem"></a>
 #### 🔹 Context
-
+<a name="context"></a>
 Five philosophers are seated at a circular table, where each has:
    - A plate of spaghetti 🍝
    - A fork on the left and another on the right 🍴🍴
@@ -38,6 +41,7 @@ Five philosophers are seated at a circular table, where each has:
 To eat, a philosopher must pick up two forks—one from their **right** and **left**. However, forks are shared with their neighbors.
 
 #### ◾️ Philosopher States
+<a name="philosopher-states"></a>
 Each philosopher alternates between three states:
    1. Thinking 🤔
    2. Eating 🍝
@@ -48,9 +52,10 @@ Each philosopher alternates between three states:
 The goal is to prevent deadlocks and race conditions while philosophers try to eat without conflicts.
 
 ### 📌 Project Rules in 42
+<a name="project-rules-in-42"></a>
 
 #### 🔹 Arguments
-
+<a name="arguments"></a>
 The program receives the following parameters:
 
 ```sh
@@ -71,6 +76,7 @@ Explanation of parameters:
 - **(Optional) number_of_times_each_philosopher_must_eat**: If provided, the program ends when all philosophers have eaten this many times.
 
 #### ✅ Permitted functions
+<a name="permitted-functions"></a>
 
 | **Function**                           | **Header File**       
 |----------------------------------------|------------------------------
