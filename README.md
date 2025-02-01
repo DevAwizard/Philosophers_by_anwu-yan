@@ -31,7 +31,7 @@ It is based on the classic Dining Philosophers Problem, described by **Edsger Di
 
 ### 📌 The Dining Philosophers Problem
 
-### 🔹 Context
+#### 🔹 Context
 
 Five philosophers are seated at a circular table, where each has:
 - A plate of spaghetti 🍝
@@ -52,7 +52,7 @@ The goal is to prevent deadlocks and race conditions while philosophers try to e
 
 ### 📌 Project Rules in 42
 
-### 🔹 Arguments
+#### 🔹 Arguments
 
 The program receives the following parameters:
 
