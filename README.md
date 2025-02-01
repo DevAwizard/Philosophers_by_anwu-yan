@@ -9,8 +9,6 @@
 </div>
 
 
-
-
 ### Table of Contents
 
 1. [Introduction](#introduction)
@@ -73,7 +71,7 @@ Explanation of parameters:
 - **time_to_sleep**: Time (ms) a philosopher sleeps after eating.
 - **(Optional) number_of_times_each_philosopher_must_eat**: If provided, the program ends when all philosophers have eaten this many times.
 
-### ✅ Permitted functions
+#### ✅ Permitted functions
 
 | **Function**                           | **Header File**       
 |----------------------------------------|------------------------------
