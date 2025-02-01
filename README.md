@@ -12,14 +12,11 @@
 ### Table of Contents
 
 1. [Introduction](#introduction)
-   
 2. [📌 The Dining Philosophers Problem](#the-dining-philosophers-problem)
    - [🔹 Context](#context)
-   - [◾️ Philosopher States](#philosopher-states)
-     
+   - [◾️ Philosopher States](#philosopher-states)     
 3. [📌 Project Rules in 42](#project-rules-in-42)
    - [🔹 Arguments](#arguments)
-     
 4. [✅ Permitted Functions](#permitted-functions)
 
 
