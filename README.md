@@ -18,6 +18,8 @@
 3. [📌 Project Rules in 42](#project-rules-in-42)
    - [🔹 Arguments](#arguments)
 4. [✅ Permitted Functions](#permitted-functions)
+5. [🌲Project Structure](#project-structure)
+
 
 
 ### Introduction
@@ -86,7 +88,9 @@ Explanation of parameters:
 | `pthread_create`, `pthread_detach`, `pthread_join` | `<pthread.h>` 
 | `pthread_mutex_init`, `pthread_mutex_destroy` | `<pthread.h>`
 
-  
+
+### 🌲 Project Structure
+<a name="project-structure"></a>
 
 
 ---
