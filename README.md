@@ -2,6 +2,9 @@
 
 
 
+![Dining Philosophers](https://github.com/user-attachments/assets/4c4e725b-24d4-4ca6-9d43-d924f7e8fdad)
+
+
 
 
 
