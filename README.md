@@ -188,7 +188,7 @@ typedef struct s_dinner
 
 
 
-### Data structure 
+
 ### 🔍 Test cases 
 <a name="test-cases"></a>
 
