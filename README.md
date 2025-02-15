@@ -22,6 +22,7 @@
    - [🔹 Arguments](#arguments)
 4. [✅ Permitted Functions](#permitted-functions)
 5. [🌲Project Structure](#project-structure)
+6. [🔍 Test cases](#test-cases)
 
 
 
