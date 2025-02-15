@@ -50,3 +50,12 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# macOS system file
+*.DS_Store
+
+# Compiled binary files
+*a.out
+
+# NFS temporary files
+*.nfs*
