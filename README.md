@@ -178,16 +178,18 @@ typedef struct s_dinner
 ```
 
 ##### 🔗 Relationship Between t_dinner and t_philo
-- t_dinner creates and manages the t_philo structures.
-- Each t_philo only has access to its own state and shared mutexes.
+- `t_dinner` creates and manages the `t_philo` structures.
+- Each `t_philo` only has access to its own state and shared mutexes.
 - This design prevents direct modification of global state from individual threads, ensuring better synchronization and avoiding race conditions.
 
 ### 📊 Flowchart
 <a name="flowchart"></a>
 
+This flowchart illustrates the logic behind a philosopher dining simulation, a well-known concurrency problem in computing. The simulation manages multiple philosopher threads competing for shared resources (forks) while ensuring synchronization and preventing deadlocks.
+
+The flowchart breaks down the key processes, including input validation, initialization, thread management, and the philosopher’s routine (eating, sleeping, thinking). It also highlights the role of the monitor thread in detecting philosopher deaths and tracking meal limits when an optional argument is provided.
+
 ![Philo_flowchart excalidraw](https://github.com/user-attachments/assets/53601682-26be-4a10-b02c-8b904985c191)
-
-
 
 
 
