@@ -185,6 +185,8 @@ typedef struct s_dinner
 ### 📊 Flowchart
 <a name="flowchart"></a>
 
+![Philo_flowchart excalidraw](https://github.com/user-attachments/assets/53601682-26be-4a10-b02c-8b904985c191)
+
 
 
 
