@@ -22,7 +22,9 @@
    - [🔹 Arguments](#arguments)
 4. [✅ Permitted Functions](#permitted-functions)
 5. [🌲Project Structure](#project-structure)
-6. [🔍 Test cases](#test-cases)
+6. [📌 Data structure ](#data-structure)
+7. [📊 Flowchart](#flowchart)
+8. [🔍 Test cases](#test-cases)
 
 
 
@@ -122,10 +124,71 @@ Explanation of parameters:
         └── time_utils.c
 ```
 
-### Flowchart
+### 📌 Data structure 
+<a name="data-structure"></a>
+
+The project uses two main structures to manage the philosophers and their shared resources.
+
+#### 🟢 t_philo Structure (Philosopher)
+
+This structure represents each individual philosopher and stores their state, behavior timings, and synchronization tools.
+```sh
+typedef struct s_philo
+{
+    pthread_t        thread;         // Thread managing this philosopher
+    int             id;              // Unique philosopher ID (1 to num_of_philos)
+    int             eating;          // Flag indicating if the philosopher is eating
+    int             meals_eaten;     // Counter tracking the number of meals eaten
+    size_t          last_meal;       // Timestamp of the last meal
+    size_t          time_to_die;     // Maximum time a philosopher can go without eating
+    size_t          time_to_eat;     // Time required for a philosopher to eat
+    size_t          time_to_sleep;   // Time required for a philosopher to sleep
+    size_t          start_time;      // Timestamp when the simulation started
+    int             num_of_philos;   // Total number of philosophers
+    int             num_times_to_eat;// Meal limit before the simulation ends (optional)
+    int             *found_dead;     // Pointer to a shared flag indicating if a philosopher has died
+    pthread_mutex_t *r_fork;         // Pointer to the right fork (mutex)
+    pthread_mutex_t *l_fork;         // Pointer to the left fork (mutex)
+    pthread_mutex_t *write_lock;     // Mutex for controlling console output
+    pthread_mutex_t *dead_lock;      // Mutex for accessing the death flag
+    pthread_mutex_t *meal_lock;      // Mutex for modifying meal-related data
+} t_philo;
+```
+
+**🔹 Key Points**
+   - Each philosopher runs as a separate thread.
+   - Uses mutexes for synchronization (forks, writing, and meal updates).
+   - Has access to its own eating and timing data.
+   - Cannot access the main structure (t_dinner) directly.
+
+
+#### 🔵 t_dinner Structure (Main Simulation Manager)
+
+This structure manages all philosophers and the shared synchronization resources.
+
+```sh
+typedef struct s_dinner
+{
+    int             dead_flag;       // Shared flag indicating if a philosopher has died
+    pthread_mutex_t write_lock;      // Mutex for synchronized console output
+    pthread_mutex_t meal_lock;       // Mutex for meal-related synchronization
+    pthread_mutex_t dead_lock;       // Mutex for checking and updating the death status
+    t_philo         *philos;         // Array of philosopher structures
+} t_dinner;
+```
+
+##### 🔗 Relationship Between t_dinner and t_philo
+- t_dinner creates and manages the t_philo structures.
+- Each t_philo only has access to its own state and shared mutexes.
+- This design prevents direct modification of global state from individual threads, ensuring better synchronization and avoiding race conditions.
+
+### 📊 Flowchart
 <a name="flowchart"></a>
 
 
+
+
+### Data structure 
 ### 🔍 Test cases 
 <a name="test-cases"></a>
 
