@@ -199,6 +199,8 @@ These cases check how the program handles incorrect inputs.
 ```sh
 ./philo --> Expected: "Error: Invalid number of arguments"
 
+./philo 5 800 -200 200 0 1 2 --> "Expected: "Error: Invalid number of arguments"
+
 ./philo 5 800 -200 200 --> Expected: "Error: Invalid argument - time values must be positive integers."
 
 ./philo 1- 800 200 200 --> Expected: "Error: Invalid argument - philosopher count must be a positive integer."
@@ -233,6 +235,8 @@ These cases should run normally without errors.
 
 ./philo 5 800 200 200 7 --> Expected: Simulation stops after each philosopher eats 7 times.
 
+./philo 50 800 200 200 --> Expected: Successfully handles 50 philosophers, philosophers should eat, think, and sleep without deadlocks
+
 ./philo 200 400 200 200 --> Expected: Successfully handles 200 philosophers, philosophers should eat, think, and sleep without deadlocks and eventually, they may start dying **if the given times are insufficient** for sustained eating.  
 ```
 
@@ -265,5 +269,59 @@ These cases check if all philosophers get a chance to eat.
 
 ./philo 5 310 200 100 --> Philosophers get a chance to eat before dying.
 ```
+
+
+### Debbuging tools
+
+**`Valgrind`** is a programming tool used for memory debugging, memory leak detection, and profiling. It helps developers identify memory management issues and improve code reliability, especially in languages like C and C++.
+
+The **`--tool=helgrind`** option specifies that Valgrind should use the Helgrind tool, which is specifically designed for detecting threading issues, particularly race conditions in multi-threaded programs. Helgrind can identify situations where multiple threads access shared memory simultaneously, which can lead to unpredictable behavior or bugs that are difficult to reproduce.
+
+#### Use of valgrind
+
+```sh
+valgrind ./philo 1 800 200 200
+==2969716== Memcheck, a memory error detector
+==2969716== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2969716== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2969716== Command: ./philo 1 800 200 200
+==2969716== 
+56 1 has taken a fork
+800 1 died
+==2969716== 
+==2969716== HEAP SUMMARY:
+==2969716==     in use at exit: 0 bytes in 0 blocks
+==2969716==   total heap usage: 3 allocs, 3 frees, 1,568 bytes allocated
+==2969716== 
+==2969716== All heap blocks were freed -- no leaks are possible
+==2969716== 
+==2969716== For lists of detected and suppressed errors, rerun with: -s
+==2969716== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
+
+#### Use of valgrind + --tool=helgrind
+
+```sh
+valgrind --tool=helgrind ./philo 1 800 200 200
+==2969611== Helgrind, a thread error detector
+==2969611== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
+==2969611== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2969611== Command: ./philo 1 800 200 200
+==2969611== 
+800 1 died
+==2969611== 
+==2969611== Use --history-level=approx or =none to gain increased speed, at
+==2969611== the cost of reduced accuracy of conflicting-access information
+==2969611== For lists of detected and suppressed errors, rerun with: -s
+==2969611== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 7 from 7)
+```
+
+
+
+
+
+
+
+
 
 ---
