@@ -20,8 +20,9 @@
 4. [✅ Permitted Functions](#permitted-functions)
 5. [🌲Project Structure](#project-structure)
 6. [📌 Data structure ](#data-structure)
-7. [📊 Flowchart](#flowchart)
-8. [🔍 Test cases](#test-cases)
+7. [💡 My approach](#my-approach)
+8. [📊 Flowchart](#flowchart)
+9. [🔍 Test cases](#test-cases)
 
 
 
@@ -178,6 +179,18 @@ typedef struct s_dinner
 - `t_dinner` creates and manages the `t_philo` structures.
 - Each `t_philo` only has access to its own state and shared mutexes.
 - This design prevents direct modification of global state from individual threads, ensuring better synchronization and avoiding race conditions.
+
+
+### 💡  My approach
+<a name="my-approach"></a>
+
+Imagine you’re in a restaurant… 🍽️
+
+- The **Restaurant** (`t_dinner`): 🏛️ This central structure manages the entire environment, including philosophers and forks. It maintains control over all operations, ensuring proper synchronization and resource allocation.
+- The **Waiter** (Host Thread): 🧑‍🍳 Acts as a supervisory entity, monitoring the status of each philosopher. The waiter ensures that philosophers adhere to the rules, preventing issues like deadlock and ensuring that each philosopher gets a chance to eat.
+- The **Diners** (`t_philo` structures): 🧑‍🎓 Represent individual philosophers who do not have autonomous control over the system. Instead, they operate under the directives issued by the t_dinner structure and the host thread. Each philosopher has attributes such as ID, state, and references to the forks they use.
+
+In this design, the `t_dinner` structure holds references to all `t_philo` instances, orchestrating their actions and managing resources. Philosophers (`t_philo`) do not have authority over the system; they perform actions as directed by the `t_dinner` structure and the host thread. This hierarchical control ensures organized management of resources and synchronization, effectively preventing issues like deadlock and ensuring fair resource distribution among philosophers.
 
 ### 📊 Flowchart
 <a name="flowchart"></a>
