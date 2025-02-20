@@ -287,7 +287,7 @@ These cases check if all philosophers get a chance to eat.
 
 
 ### 🧰 Debugging tools
-<a name="debbuging tools"></a>
+<a name="debugging tools"></a>
 
 **`Valgrind`** is a programming tool used for memory debugging, memory leak detection, and profiling. It helps developers identify memory management issues and improve code reliability, especially in languages like C and C++.
 
