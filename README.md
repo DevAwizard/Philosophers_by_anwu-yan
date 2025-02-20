@@ -23,6 +23,8 @@
 7. [💡 My approach](#my-approach)
 8. [📊 Flowchart](#flowchart)
 9. [🔍 Test cases](#test-cases)
+10. [🧰 Debugging tools](#debugging-tools)
+
 
 
 
@@ -284,7 +286,8 @@ These cases check if all philosophers get a chance to eat.
 ```
 
 
-### Debbuging tools
+### 🧰 Debugging tools
+<a name="debbuging tools"></a>
 
 **`Valgrind`** is a programming tool used for memory debugging, memory leak detection, and profiling. It helps developers identify memory management issues and improve code reliability, especially in languages like C and C++.
 
